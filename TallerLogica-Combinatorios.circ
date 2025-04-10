@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project source="3.9.0" version="1.0">
-  This file is intended to be loaded by Logisim-evolution v3.9.0(https://github.com/logisim-evolution/).
+<project source="3.9.0dev" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v3.9.0dev(https://github.com/logisim-evolution/).
 
   <lib desc="#Wiring" name="0">
     <tool name="Pin">
@@ -594,6 +594,7 @@
     </comp>
     <comp lib="1" loc="(1340,700)" name="XNOR Gate"/>
     <comp lib="1" loc="(1420,660)" name="AND Gate"/>
+    <comp lib="1" loc="(960,320)" name="OR Gate"/>
     <comp lib="1" loc="(970,580)" name="NOT Gate"/>
     <comp lib="2" loc="(1110,490)" name="Multiplexer">
       <a name="select" val="2"/>
@@ -649,8 +650,6 @@
     <wire from="(1100,560)" to="(1100,570)"/>
     <wire from="(1100,560)" to="(1160,560)"/>
     <wire from="(1100,590)" to="(1120,590)"/>
-    <wire from="(1110,320)" to="(1110,400)"/>
-    <wire from="(1110,320)" to="(1130,320)"/>
     <wire from="(1110,490)" to="(1320,490)"/>
     <wire from="(1110,570)" to="(1110,580)"/>
     <wire from="(1110,570)" to="(1160,570)"/>
@@ -685,7 +684,9 @@
     <wire from="(1200,400)" to="(1210,400)"/>
     <wire from="(1200,580)" to="(1280,580)"/>
     <wire from="(1210,680)" to="(1270,680)"/>
-    <wire from="(1210,750)" to="(1260,750)"/>
+    <wire from="(1210,750)" to="(1220,750)"/>
+    <wire from="(1220,750)" to="(1220,860)"/>
+    <wire from="(1220,750)" to="(1260,750)"/>
     <wire from="(1260,290)" to="(1260,360)"/>
     <wire from="(1260,360)" to="(1260,440)"/>
     <wire from="(1260,440)" to="(1260,630)"/>
@@ -743,7 +744,7 @@
     <wire from="(730,300)" to="(770,300)"/>
     <wire from="(730,360)" to="(760,360)"/>
     <wire from="(730,380)" to="(1060,380)"/>
-    <wire from="(730,400)" to="(1110,400)"/>
+    <wire from="(730,400)" to="(870,400)"/>
     <wire from="(730,410)" to="(1120,410)"/>
     <wire from="(730,410)" to="(730,420)"/>
     <wire from="(730,440)" to="(750,440)"/>
@@ -761,12 +762,18 @@
     <wire from="(80,260)" to="(130,260)"/>
     <wire from="(810,290)" to="(1120,290)"/>
     <wire from="(810,290)" to="(810,800)"/>
+    <wire from="(870,300)" to="(870,400)"/>
+    <wire from="(870,300)" to="(910,300)"/>
+    <wire from="(880,340)" to="(880,860)"/>
+    <wire from="(880,340)" to="(910,340)"/>
+    <wire from="(880,860)" to="(1220,860)"/>
     <wire from="(890,420)" to="(1130,420)"/>
     <wire from="(890,420)" to="(890,660)"/>
     <wire from="(900,430)" to="(1140,430)"/>
     <wire from="(900,430)" to="(900,760)"/>
     <wire from="(930,600)" to="(930,680)"/>
     <wire from="(930,680)" to="(970,680)"/>
+    <wire from="(960,320)" to="(1130,320)"/>
     <wire from="(970,580)" to="(1110,580)"/>
     <wire from="(970,680)" to="(970,750)"/>
     <wire from="(970,680)" to="(990,680)"/>

@@ -111,7 +111,7 @@
     <a name="circuit" val="registro_salida_restringida"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(160,150)" name="Pin">
+    <comp lib="0" loc="(160,170)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="clk"/>
     </comp>
@@ -119,7 +119,7 @@
       <a name="appearance" val="classic"/>
       <a name="label" val="Reg_in"/>
     </comp>
-    <comp lib="0" loc="(250,270)" name="Pin">
+    <comp lib="0" loc="(240,270)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
       <a name="label" val="w"/>
@@ -141,18 +141,17 @@
       <a name="label" val="Reg_output"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="1" loc="(320,170)" name="AND Gate"/>
+    <comp lib="1" loc="(250,130)" name="Controlled Buffer"/>
     <comp lib="1" loc="(520,170)" name="Controlled Buffer"/>
     <comp lib="4" loc="(410,120)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <wire from="(160,150)" to="(270,150)"/>
-    <wire from="(160,220)" to="(360,220)"/>
-    <wire from="(250,190)" to="(250,270)"/>
-    <wire from="(250,190)" to="(270,190)"/>
-    <wire from="(320,170)" to="(400,170)"/>
-    <wire from="(360,130)" to="(360,220)"/>
-    <wire from="(360,130)" to="(400,130)"/>
+    <wire from="(160,170)" to="(400,170)"/>
+    <wire from="(160,220)" to="(190,220)"/>
+    <wire from="(190,130)" to="(190,220)"/>
+    <wire from="(190,130)" to="(230,130)"/>
+    <wire from="(240,140)" to="(240,270)"/>
+    <wire from="(250,130)" to="(400,130)"/>
     <wire from="(460,130)" to="(490,130)"/>
     <wire from="(490,100)" to="(490,130)"/>
     <wire from="(490,100)" to="(540,100)"/>

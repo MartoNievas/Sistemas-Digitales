@@ -1,0 +1,22 @@
+a) fin -> 0x14, resta -> 0x18, sigo -> 0x20 direcciones de las etiquetas 
+
+b)dezplazamientos de las estiquetas: 
+- fin: 
+    beq zero, zero, fin = 0 offset 
+    beq a0,zero, fin = 0xfffffff8 = (-8) offset
+    
+  j resta = 0xfffffff8 = (-8) offset y la primera etiquete resta = 
+
+c) rango de la psudoinstruccion li es [-2**31 -1, 2**31 -1] no coinciden con los imm de addi ya que son de 12 bits 
+
+d) se resulven primero cargando los 20 bits mas significativos es decir la parte alta de un inmediato de 32 bits con lui (load upper immediate) y luego con addi se cargan los 12 bits menos significativos la parte baja, que es lo mismo que la psudoinstruccion li (load immediate) 
+
+e) el valor final de a1 = 2114 (no se modifica en la ejecucion)
+
+f) el valor final del pc seria el de la etiqueta fin es decir 0x14 
+
+g)listar la secuencia descripta por el pc: 
+(0x00 -> 0x04) li1 -> (0x08 -> 0x0c) li2 -> 0x10 (salto resta) -> 0x18 (resta) -> 0x1c (beq salto a fin) -> 0x14 (fin) es falso -> 0x18 (resta) -> 0x1c (beq salto a fin) -> 0x14 (fin) es verdadero -> 0x14 .... 
+
+	
+  

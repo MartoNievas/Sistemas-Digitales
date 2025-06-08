@@ -73,9 +73,9 @@ loop:
     beq s1, zero, terminar
 
     lbu a0, 0(s0)        # Cargar el byte actual en a0 (sin signo)
-    jal ra, EsPotenciaDeDos
+    jal ra, EsPotenciaDeDos # Llamar a función para verifica si a0 es potencia de 2
 
-    beq a0, zero, siguiente
+    beq a0, zero, siguiente # si dar cero (no es potencia), saltar al siguiente
     addi s2, s2, 1       # contador++
 
 siguiente:

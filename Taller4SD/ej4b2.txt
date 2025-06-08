@@ -94,4 +94,5 @@ terminar:
     ret
 
 
-#
+# cargue los elementos de arreglo(arriba de todos) en .byte pero quizas debo hacer en .word?? (nose si cambia muchos)
+# si lo hago en .word creo que tenemos que avanzar el punto de a 4bytes es decir addi s0, s0, 4

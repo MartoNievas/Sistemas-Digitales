@@ -1,0 +1,97 @@
+.data
+arr: .byte 1, 9, 3, 4, 0, 8, 16   # Arreglo de 7 elementos
+
+.text
+.global main
+.global PotenciasEnArreglo
+.global EsPotenciaDeDos
+
+main:
+    la a0, arr           # a0 = dirección del arreglo
+    li a1, 7             # a1 = cantidad de elementos
+    jal ra, PotenciasEnArreglo
+
+    li t1, 4             # res esperado = 4 valores de potencia de dos
+    bne a0, t1, noFunciona
+
+funciona:
+    li a1, 1             # ok funcionan
+    j fin
+
+noFunciona:
+    li a1, 0             # no funcionan
+    j fin
+
+fin:
+    j fin                # Bucle infinito
+    
+# aux:  devuelve 1 si a0 es potencia de 2, 0 si no
+EsPotenciaDeDos:
+    addi sp, sp, -16
+    sw ra, 12(sp)
+    sw s0, 8(sp)
+    sw s1, 4(sp)
+    sw s2, 0(sp)
+
+    mv s0, a0            # Guardamos x en s0
+
+    beq s0, zero, no     # Si x == 0 entonces no es potencia de dos
+
+    addi s1, s0, -1      # s1 = x - 1
+    and  s2, s0, s1      # s2 = x and (x - 1)
+    bne  s2, zero, no    # Si resultado != 0 entonces no es potencia de dos 
+
+    li a0, 1             # Sí es potencia de dos devolver 1
+    j finPotencia
+
+no:
+    li a0, 0             # No es potencia entonces devolver 0
+
+finPotencia:
+    lw ra, 12(sp)
+    lw s0, 8(sp)
+    lw s1, 4(sp)
+    lw s2, 0(sp)
+    addi sp, sp, 16
+    ret
+
+# Cuenta cuántos elementos en el arreglo son potencias de 2
+# Entrada: a0 = puntero, a1 = cantidad
+# Salida: a0 = cantidad de potencias de 2
+PotenciasEnArreglo:
+    addi sp, sp, -16 #Prologo
+    sw ra, 12(sp) # Prologo
+    sw s0, 8(sp) #Prologo
+    sw s1, 4(sp) # Prologo, contador de elems restantes
+    sw s2, 0(sp) # Prologo , contador de elems encontrados
+
+    mv s0, a0            # s0 = puntero al arreglo(posicion actual)
+    mv s1, a1            # s1 = cantidad de elementos
+    li s2, 0             # s2 = contador de potencias de 2
+
+loop:
+    beq s1, zero, terminar
+
+    lbu a0, 0(s0)        # Cargar el byte actual en a0 (sin signo)
+    jal ra, EsPotenciaDeDos
+
+    beq a0, zero, siguiente
+    addi s2, s2, 1       # contador++
+
+siguiente:
+    addi s0, s0, 1       # avanzar al siguiente byte
+    addi s1, s1, -1      # decrementar cantidad restante
+    j loop
+
+terminar:
+    mv a0, s2            # devolver resultado en a0
+
+    lw ra, 12(sp) # Epilogo
+    lw s0, 8(sp) # Epilogo
+    lw s1, 4(sp) # Epilogo
+    lw s2, 0(sp) # Epilogo
+    addi sp, sp, 16 # Epilogo
+    ret
+
+
+#

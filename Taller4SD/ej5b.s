@@ -7,12 +7,12 @@ main:
     # Test1 caso base 
     li a0, 2  # n = 2
     jal ra, fibonacci3 # fibonacci3(2)
-    li a1, 1 
+    li a1, 2 
     bne a0, a1, noFunciona # fibonacci3(2) = 1 compara el valor obtenido con el esperado
     # Test1 caso n = 5 
     li a0, 5 
     jal ra, fibonacci3 # fibonacci3(5) 
-    li a1, 7
+    li a1, 11
     bne a0,a1,noFunciona # fibonacci3(5) == 7 
 funciona:  
     li a1, 1 # si funciona guardo 1 en a1 
@@ -58,7 +58,7 @@ fibonacci3:
          li a0, 1 # a0 = 1
          j epilogo      
      caso2:
-         li a0, 1 # a0 = 1
+         li a0, 2 # a0 = 1
          j epilogo
     
     epilogo:

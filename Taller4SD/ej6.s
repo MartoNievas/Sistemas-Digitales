@@ -88,5 +88,3 @@ sumarNotasImpares:
      addi sp,sp,16 
      ret 
      
-     
-     

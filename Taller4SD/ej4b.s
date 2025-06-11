@@ -64,12 +64,12 @@ EsPotenciaDeDos:
     addi sp,sp,-16 
     sw ra,0(sp) 
     
-    beq a0,zero,NoEsPotenciaDeDos
+    beq a0,zero,NoEsPotenciaDeDos # a0 = 0 entonces no es potencia de 2 
     
-    addi t0,a0,-1
-    and a0, t0,a0
-    beq a0, zero,esP2
-    NoEsPotenciaDeDos: 
+    addi t0,a0,-1 # t0 = a0 - 1 
+    and a0, t0,a0 # and a0 a0 -1 si da 0 entonces es potencia de 2, caso contrario no es potencia de 2 
+    beq a0, zero,esP2 # verifica si es 0 
+    NoEsPotenciaDeDos:  # caso contrario no es potencia de 2 
         li a0,0
         lw ra,0(sp)
         addi sp,sp,16

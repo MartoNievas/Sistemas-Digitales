@@ -1,7 +1,7 @@
 .data
 # arreglo de números de 32 bits 
-array:      .word 10, 20, 30, 40, 50        # Array original
-esperado:   .word -10, -20, -30, -40, -50   # Inversos aditivos esperados
+array:      .word 10, -20, 30, 40, 50        # Array original
+esperado:   .word -10, 20, -30, -40, -50   # Inversos aditivos esperados
 len:        .word 5
 
 .text
